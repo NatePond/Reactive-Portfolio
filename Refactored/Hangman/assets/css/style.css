@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'yataghanregular';
+  src: url('https://natepond.github.io/bootstrap/fonts/yataghan-webfont.eot');
+  src: url('https://natepond.github.io/bootstrap/fonts/yataghan-webfont.eot?#iefix') format('embedded-opentype'),
+       url('https://natepond.github.io/bootstrap/fonts/yataghan-webfont.woff') format('woff'),
+       url('https://natepond.github.io/bootstrap/fonts/yataghan-webfont.ttf') format('truetype'),
+       url('https://natepond.github.io/bootstrap/fonts/yataghan-webfont.svg#yataghanregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  text-align:center;
+  background: url("background.png");
+  font-size: 18px;
+}
+
+h1{
+  color: #ecf0f1;
+  font-size: 40px;
+}
+
+h2 {
+  color: red;
+  font-size: 80px;
+  font-family: 'Creepster', cursive;
+}
+
+#imgholder {
+  height: 450px;
+}
+
+#prize {
+  position: relative;
+  top: 10px;
+  height: 400px;
+  width: 100x;
+  border-radius: 40px 40px 40px 40px;
+}
+#blanks {
+position: relative;
+left: -10px;
+}
+.blanks li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+  font-size: 20px;
+  margin-left: -20px;
+}
+
+
+.col-lg-3 {
+  height: 450px;
+  color: #ecf0f1;
+  background-color: rgba(245, 245, 245, 0.3);
+  border-radius: 5px 40px 5px;
+  border: solid 2px #c71f1f; 
+  float: left;
+}
+
+.col-lg-6 {
+  color: #ecf0f1;
+  background-color: rgba(245, 245, 245, 0.3);
+  border-radius: 5px 40px 5px;
+  border: solid 2px #c71f1f; 
+}
+
+
+.navbar-fixed-bottom {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  color: transparent;
+  padding-top: 15px;
+  overflow:hidden;
+  border-top: solid 5px transparent;
+}
+
+.navbar-fixed-bottom:hover {
+  background-color: #36454f;
+  border-color: #c71f1f;
+  color: #ecf0f1;
+  transition-duration: 1.00s
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Random</title>
+
+  <!-- Added link to the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Creepster');
+  </style>
+
+  <style type="text/css">
+        body{
+        font-family: "yataghanregular";
+        background: "images/background.png";
+            }
+  </style>
+
+</head>
+<body>
+<div id="chat_div">
+</div>
+
+  <div class="row">
+    <div id="hangman" class="col-lg-12">
+      <h1>HANGMAN</h1>
+      <h2>Monster Mash Edition!</h2>
+    </div>
+    <div id="movie" class="col-lg-12"></div>
+  </div>
+
+  <div class="row">
+     <div class ="col-lg-12"> 
+      <div class="col-lg-12">
+        <div id="imgholder" class="col-lg-6 col-lg-offset-1">
+          <div id="prizename"></div>
+          <img id="prize" class="img-responsive" src="">
+        </div>
+
+        <div class="col-lg-3 col-lg-offset-1">
+        <br><br>
+          <p>PRESS ANY KEY TO GET STARTED!</p>
+          <p>Wins</p>
+          <div id="wins" class="col-lg-12"></div>
+          <p>CURRENT WORD</p><br>
+          <div id="blanks" class="blanks"></div><br>
+          <p>NUMBER OF GUESSES REMAINING</p>
+          <div id="limbs" class="col-lg-12"></div>
+          <p>LETTERS ALREADY GUESSED</p>
+          <div id="guessed" class="guessed" class="col-lg-12"></div> 
+        </div>
+      </div>
+  </div>
+</body>
+<footer class="navbar-fixed-bottom">©Copyright2017 Nate Pond</footer>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</html>
