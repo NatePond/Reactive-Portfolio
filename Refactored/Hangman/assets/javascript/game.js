@@ -42,7 +42,7 @@ window.onload = function() {
     confirm();
   }
   const userGuessed = userGuesses => userGuesses.length > 0;
-  const guessInguesses = (x, y) => x === userGuesses[y];
+  const guessInguesses = (x, y) => x === userGuesses[y]; 
   
   // verify = userGuess => {
   //   if (userGuessed) {
@@ -57,14 +57,13 @@ window.onload = function() {
 
    
   verify = userGuess => {
-    const forLoop = (v) => {for (let i = 0; i < v.length; i++) {
-        if (guessInguesses(userGuess, i)){ 
-          return true
-        }
+    const forLoop = v => {for (let i = 0; i < v.length; i++) {
+        let k = guessInguesses(userGuess, i)
+        if (k) return true
       }
     }; 
-    let verified = forLoop(userGuesses) ? true : false
-    return userGuessed ? verified : false
+    let verified = forLoop(userGuesses) ? true : false;
+    return userGuessed ? verified : false;
   }
 
   confirm = function() {
@@ -119,7 +118,6 @@ window.onload = function() {
   }
 
   play = function() {
-    console.log(word);
     guesses = [];
     wrong = [];
     limbs = 7;
