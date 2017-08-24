@@ -1,13 +1,12 @@
 "use strict";
 window.onload = function() {
   var audio = new Audio("assets/MisfitsMonsterMash.mp4");
-  // audio.play();
+  audio.play();
   audio.loop = true;
   var wins = 0;
   var limbs = 7;
   var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  // var monster = ["pyramid-head", "leatherface", "xenomorph", "cenobite", "predator", "terminator", "freddy", "jason", "babadook", "jaws", "brundlefly", "gremlin", "pennywise", "jigsaw", "samara", "hannibal", "michael-myers"];
-    var monster = ["jaws"];
+  var monster = ["pyramid-head", "leatherface", "xenomorph", "cenobite", "predator", "terminator", "freddy", "jason", "babadook", "jaws", "brundlefly", "gremlin", "pennywise", "jigsaw", "samara", "hannibal", "michael-myers"];
   var word;
   word = monster[Math.floor(Math.random() * monster.length)];
   var guess;
