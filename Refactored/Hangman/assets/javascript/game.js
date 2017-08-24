@@ -6,8 +6,8 @@ window.onload = function() {
   var wins = 0;
   var limbs = 7;
   var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var monster = ["pyramid-head", "leatherface", "xenomorph", "cenobite", "predator", "terminator", "freddy", "jason", "babadook", "jaws", "brundlefly", "gremlin", "pennywise", "jigsaw", "samara", "hannibal", "michael-myers"];
-    // var monster = ["michael-myers"];
+  // var monster = ["pyramid-head", "leatherface", "xenomorph", "cenobite", "predator", "terminator", "freddy", "jason", "babadook", "jaws", "brundlefly", "gremlin", "pennywise", "jigsaw", "samara", "hannibal", "michael-myers"];
+    var monster = ["jaws"];
   var word;
   word = monster[Math.floor(Math.random() * monster.length)];
   var guess;
@@ -46,15 +46,21 @@ window.onload = function() {
         if (k) return true
       }
     }; 
-    let verified = forLoop(userGuesses) ? true : false;
-    return userGuessed ? verified : false;
+    let verification = forLoop(userGuesses) ? true : false;
+    return userGuessed ? verification : false;
   }
 
   const confirm = () => {
     document.onkeydown = function(event) {
-      const guess = event.key;
-      const isVerified = verify(guess);
-      if (isVerified === false) {
+      let guess;
+      let e = event.key;
+      const r = alphabet.indexOf(e);
+      const k = () => guess = e; 
+      thisInthat(e, alphabet, r) && k() 
+      const needsVerification = verify(guess);
+      const isVerified = !needsVerification
+      const confirmation = () => {
+        document.getElementById("limbs").innerHTML = limbs;
         userGuesses.push(guess)
         for (let i = 0; i < word.length; i++) {
           if (thisInthat(guess, word, i)) {
@@ -63,19 +69,17 @@ window.onload = function() {
             right++;
           }
         }
-
-        let i = word.indexOf(guess)
+        const g = word.indexOf(guess)
         const wordSplit = [...word]
-        if (!thisInthat(guess, wordSplit, i)) {
-          limbs--;
-          wrong.push(guess);
+        const isIncorrect = () => {
+          limbs--; 
+          wrong.push(guess); 
           document.getElementById("guessed").innerHTML = wrong;
-        }
-
-        console.log(limbs);
-        document.getElementById("limbs").innerHTML = limbs;
-
-        if (limbs < 1) {
+        };
+        const notInword = () => !thisInthat(guess, wordSplit, g);
+        const isDead = () => limbs < 1;
+        const isDone = () => right === word.length;
+        const isLoser = () => {
           $(".guess").empty();
           const audio = new Audio('assets/Disappointed.mp3');
           audio.play();
@@ -84,9 +88,8 @@ window.onload = function() {
           play();
           $("#prizename").empty();
           userGuesses = [];
-        }
-        $(".class").empty();
-        if (right === word.length) {
+        };
+        const isWinner = () => {
           const audio = new Audio('assets/yay.mp3');
           audio.play();
           wins++;
@@ -95,10 +98,15 @@ window.onload = function() {
           document.getElementById("prize").src = "assets/images/" + word + ".png";
           document.getElementById("prizename").innerHTML = word;
           play();
-        }
-      } else {
-        alert("Already Guessed!")
-      }
+        };
+        $(".class").empty();    
+        isDead() ? isLoser()
+         :
+        isDone() ? isWinner() 
+         :
+        notInword() && isIncorrect() 
+      } 
+      isVerified ? confirmation() : console.log("AlreadyGuessed") 
     };
   }
 
